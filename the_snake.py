@@ -18,16 +18,12 @@ DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
 directions = {
-    (pygame.K_UP, UP): UP,
     (pygame.K_UP, LEFT): UP,
     (pygame.K_UP, RIGHT): UP,
-    (pygame.K_DOWN, DOWN): DOWN,
     (pygame.K_DOWN, LEFT): DOWN,
     (pygame.K_DOWN, RIGHT): DOWN,
-    (pygame.K_LEFT, LEFT): LEFT,
     (pygame.K_LEFT, UP): LEFT,
     (pygame.K_LEFT, DOWN): LEFT,
-    (pygame.K_RIGHT, RIGHT): RIGHT,
     (pygame.K_RIGHT, UP): RIGHT,
     (pygame.K_RIGHT, DOWN): RIGHT,
 }
