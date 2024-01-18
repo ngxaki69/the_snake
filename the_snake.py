@@ -17,7 +17,7 @@ UP = (0, -1)
 DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
-all_direction = {
+directions = {
     (pygame.K_UP, UP): UP,
     (pygame.K_UP, LEFT): UP,
     (pygame.K_UP, RIGHT): UP,
@@ -160,9 +160,9 @@ def handle_keys(game_object):
         elif event.type == pygame.KEYDOWN and event.key == pygame.K_PAGEDOWN:
             SPEED -= 10
         elif event.type == pygame.KEYDOWN:
-            if (event.key, game_object.direction) in all_direction.keys():
-                game_object.update_direction(all_direction[event.key,
-                                                       game_object.direction])
+            if (event.key, game_object.direction) in directions.keys():
+                game_object.update_direction(directions[event.key,
+                                                        game_object.direction])
 
 
 def main():
