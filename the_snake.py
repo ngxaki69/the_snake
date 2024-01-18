@@ -17,20 +17,16 @@ UP = (0, -1)
 DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
-some_dict = {
-    (pygame.K_UP, DOWN): DOWN,
+all_direction = {
     (pygame.K_UP, UP): UP,
     (pygame.K_UP, LEFT): UP,
     (pygame.K_UP, RIGHT): UP,
-    (pygame.K_DOWN, UP): UP,
     (pygame.K_DOWN, DOWN): DOWN,
     (pygame.K_DOWN, LEFT): DOWN,
     (pygame.K_DOWN, RIGHT): DOWN,
-    (pygame.K_LEFT, RIGHT): RIGHT,
     (pygame.K_LEFT, LEFT): LEFT,
     (pygame.K_LEFT, UP): LEFT,
     (pygame.K_LEFT, DOWN): LEFT,
-    (pygame.K_RIGHT, LEFT): LEFT,
     (pygame.K_RIGHT, RIGHT): RIGHT,
     (pygame.K_RIGHT, UP): RIGHT,
     (pygame.K_RIGHT, DOWN): RIGHT,
@@ -105,7 +101,6 @@ class Snake(GameObject):
         super().__init__()
         self.positions = self.position
         self.reset()
-        self.direction = DOWN
         self.body_color = (0, 255, 0)
 
     def update_direction(self, direction):
@@ -181,7 +176,6 @@ def main():
         snake.move()
         if (len(snake.positions) > 2
                 and snake.positions[0] in snake.positions[2:]):
-            print('1')
             snake.reset()
         if snake.get_head_position() == apple.position:
             snake.length += 1
