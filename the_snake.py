@@ -160,8 +160,8 @@ def handle_keys(game_object):
         elif event.type == pygame.KEYDOWN and event.key == pygame.K_PAGEDOWN:
             SPEED -= 10
         elif event.type == pygame.KEYDOWN:
-            if (event.key, game_object.direction) in some_dict.keys():
-                game_object.update_direction(some_dict[event.key,
+            if (event.key, game_object.direction) in all_direction.keys():
+                game_object.update_direction(all_direction[event.key,
                                                        game_object.direction])
 
 
